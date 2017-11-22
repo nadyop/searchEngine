@@ -1,0 +1,93 @@
+<html>
+  <head>
+    <title>Hello</title>
+    <style>
+        table, td {
+           border: 1px solid black;
+        }
+        .head {
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    {% block content %}
+    <div class="head">
+        <h1>Finding Similarity</h1>
+    </div>
+    <div align="center">
+        <form method="POST">
+            {{ sform.hidden_tag() }}
+            <fieldset>
+                <legend align="center">Input your filename</legend>
+                <!-- input -->
+                {{ sform.keyword }}
+                <!-- button -->
+                {{ sform.search }}
+                {{ sform.search2 }}
+                {{ sform.search3 }}
+                {{ sform.search4 }}
+                {{ sform.search5 }}
+            </fieldset>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div align="center">
+    <b>Document Result:</b><br><br>
+        <table>
+            <tr>
+                <td style="text-align:center">Judul</td>
+                <td style="text-align:center">Kategori</td>
+                <td style="text-align:center">Distance Jauh</td>
+            </tr>
+        {% for v in data %}
+            <tr>
+            <td style="text-align:center">{{ v[0] }}</td>
+            <td style="text-align:center">{{ v[1] }}</td>
+            <td style="text-align:center">{{ v[2] }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div><br>
+    <!-- pie chart -->
+    <div align="center">
+        <form method="POST">
+            {{ sform.hidden_tag() }}
+            <fieldset>
+                <legend align="center">PIECHART</legend>
+            </fieldset>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div align="center">
+    <!-- <b>Document Result:</b><br><br> -->
+        <div id="piechart"></div>
+    </div>
+    {% endblock %}
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    // Load google charts
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+      ['Task', 'Hours per Day'],
+      {% for v in data %}
+      ['{{ v[1] }}', {{ v[2] }}],
+      {% endfor %}
+    ]);
+
+      // Optional; add a title and set the width and height of the chart
+      var options = {'title':'', 'width':550, 'height':400};
+
+      // Display the chart inside the <div> element with id="piechart"
+      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+      chart.draw(data, options);
+    }
+    </script>
+  </body>
+</html>

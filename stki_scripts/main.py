@@ -45,9 +45,6 @@ def findSim(pathfile, pathcorpus):
     :return: nama file, jarak terdekat
     """
 
-    # this_path = os.path.split(__file__)[0]
-    # pathcorpus = os.path.join(this_path, pathcorpus)
-    # pathfile   = os.path.join(this_path, pathfile)
     # membaca sekaligus pre-processing semua artikel corpus simpan ke dictionary
     articles = {}
     for item in os.listdir(pathcorpus):
@@ -59,14 +56,6 @@ def findSim(pathfile, pathcorpus):
     # kemudian dimasukan ke dictionary articles dengan value keyword yang dimasukan
     findname = 'index'
     articles[findname] = w3.prepro_base(pathfile)
-
-    # tambahkan artikel yg dicari ke dictionary
-    # findname = pathfile.split("/")[-1]
-    # try:
-    #     articles[findname]
-    # except:
-    #     with open(pathfile, 'r') as file:
-    #         articles[findname] = w3.prepro_base(file.read())
 
     # representasi bow
     list_of_bow = []
@@ -86,7 +75,7 @@ def findSim(pathfile, pathcorpus):
         if item.endswith(".txt"):
             with open(pathcorpus + "/" + item, 'r') as file:
                 kategori[item] = " "
-    # kategori = {}
+
     jarak = {}
     for key, vektor in zip(articles.keys(), matrix_akhir):
         if key != findname:
@@ -119,9 +108,6 @@ def findCosine(pathfile, pathcorpus):
     :return: nama file, jarak terdekat
     """
 
-    # this_path = os.path.split(__file__)[0]
-    # pathcorpus = os.path.join(this_path, pathcorpus)
-    # pathfile   = os.path.join(this_path, pathfile)
     # membaca sekaligus pre-processing semua artikel corpus simpan ke dictionary
     articles = {}
     for item in os.listdir(pathcorpus):
@@ -133,14 +119,6 @@ def findCosine(pathfile, pathcorpus):
     # kemudian dimasukan ke dictionary articles dengan value keyword yang dimasukan
     findname = 'index'
     articles[findname] = w3.prepro_base(pathfile)
-
-    # tambahkan artikel yg dicari ke dictionary
-    # findname = pathfile.split("/")[-1]
-    # try:
-    #     articles[findname]
-    # except:
-    #     with open(pathfile, 'r') as file:
-    #         articles[findname] = w3.prepro_base(file.read())
 
     # representasi bow
     list_of_bow = []
@@ -160,7 +138,7 @@ def findCosine(pathfile, pathcorpus):
         if item.endswith(".txt"):
             with open(pathcorpus + "/" + item, 'r') as file:
                 kategori[item] = " "
-    # kategori = {}
+
     jarak = {}
     for key, vektor in zip(articles.keys(), matrix_akhir):
         if key != findname:
@@ -191,9 +169,6 @@ def findManhattan_distance(pathfile, pathcorpus):
     :return: nama file, jarak terdekat
     """
 
-    # this_path = os.path.split(__file__)[0]
-    # pathcorpus = os.path.join(this_path, pathcorpus)
-    # pathfile   = os.path.join(this_path, pathfile)
     # membaca sekaligus pre-processing semua artikel corpus simpan ke dictionary
     articles = {}
     for item in os.listdir(pathcorpus):
@@ -205,14 +180,6 @@ def findManhattan_distance(pathfile, pathcorpus):
     # kemudian dimasukan ke dictionary articles dengan value keyword yang dimasukan
     findname = 'index'
     articles[findname] = w3.prepro_base(pathfile)
-
-    # tambahkan artikel yg dicari ke dictionary
-    # findname = pathfile.split("/")[-1]
-    # try:
-    #     articles[findname]
-    # except:
-    #     with open(pathfile, 'r') as file:
-    #         articles[findname] = w3.prepro_base(file.read())
 
     # representasi bow
     list_of_bow = []
@@ -232,12 +199,10 @@ def findManhattan_distance(pathfile, pathcorpus):
         if item.endswith(".txt"):
             with open(pathcorpus + "/" + item, 'r') as file:
                 kategori[item] = " "
-    # kategori = {}
     jarak = {}
     for key, vektor in zip(articles.keys(), matrix_akhir):
         if key != findname:
             jarak[key] = w5.manhattan_distance(matrix_akhir[id_keyword], vektor)
-    # kategori
         if key[:2] == "ed":
             kategori[key]=("edukasi")
         elif key[:2] == "bk":
@@ -252,7 +217,6 @@ def findManhattan_distance(pathfile, pathcorpus):
             kategori[key]=("lifestyle")
         elif key[:2] == "tk":
             kategori[key]=("teknologi")
-    # return w4.sortdic(jarak, descending=False, n=5)
     return w4.sortdic(jarak, kategori, descending=False, n=5)
 
 def findJaccard_similarity(pathfile, pathcorpus):
@@ -263,9 +227,6 @@ def findJaccard_similarity(pathfile, pathcorpus):
     :return: nama file, jarak terdekat
     """
 
-    # this_path = os.path.split(__file__)[0]
-    # pathcorpus = os.path.join(this_path, pathcorpus)
-    # pathfile   = os.path.join(this_path, pathfile)
     # membaca sekaligus pre-processing semua artikel corpus simpan ke dictionary
     articles = {}
     for item in os.listdir(pathcorpus):
@@ -277,14 +238,6 @@ def findJaccard_similarity(pathfile, pathcorpus):
     # kemudian dimasukan ke dictionary articles dengan value keyword yang dimasukan
     findname = 'index'
     articles[findname] = w3.prepro_base(pathfile)
-
-    # tambahkan artikel yg dicari ke dictionary
-    # findname = pathfile.split("/")[-1]
-    # try:
-    #     articles[findname]
-    # except:
-    #     with open(pathfile, 'r') as file:
-    #         articles[findname] = w3.prepro_base(file.read())
 
     # representasi bow
     list_of_bow = []
@@ -304,7 +257,6 @@ def findJaccard_similarity(pathfile, pathcorpus):
         if item.endswith(".txt"):
             with open(pathcorpus + "/" + item, 'r') as file:
                 kategori[item] = " "
-    # kategori = {}
     jarak = {}
     for key, vektor in zip(articles.keys(), matrix_akhir):
         if key != findname:
@@ -324,7 +276,6 @@ def findJaccard_similarity(pathfile, pathcorpus):
             kategori[key]=("lifestyle")
         elif key[:2] == "tk":
             kategori[key]=("teknologi")
-    # return w4.sortdic(jarak, descending=False, n=5)
     return w4.sortdic(jarak, kategori, descending=False, n=5)
 
 def findPearson_correlation(pathfile, pathcorpus):
@@ -335,9 +286,6 @@ def findPearson_correlation(pathfile, pathcorpus):
     :return: nama file, jarak terdekat
     """
 
-    # this_path = os.path.split(__file__)[0]
-    # pathcorpus = os.path.join(this_path, pathcorpus)
-    # pathfile   = os.path.join(this_path, pathfile)
     # membaca sekaligus pre-processing semua artikel corpus simpan ke dictionary
     articles = {}
     for item in os.listdir(pathcorpus):
@@ -349,14 +297,6 @@ def findPearson_correlation(pathfile, pathcorpus):
     # kemudian dimasukan ke dictionary articles dengan value keyword yang dimasukan
     findname = 'index'
     articles[findname] = w3.prepro_base(pathfile)
-
-    # tambahkan artikel yg dicari ke dictionary
-    # findname = pathfile.split("/")[-1]
-    # try:
-    #     articles[findname]
-    # except:
-    #     with open(pathfile, 'r') as file:
-    #         articles[findname] = w3.prepro_base(file.read())
 
     # representasi bow
     list_of_bow = []
@@ -376,7 +316,7 @@ def findPearson_correlation(pathfile, pathcorpus):
         if item.endswith(".txt"):
             with open(pathcorpus + "/" + item, 'r') as file:
                 kategori[item] = " "
-    # kategori = {}
+
     jarak = {}
     for key, vektor in zip(articles.keys(), matrix_akhir):
         if key != findname:
@@ -396,5 +336,4 @@ def findPearson_correlation(pathfile, pathcorpus):
             kategori[key]=("lifestyle")
         elif key[:2] == "tk":
             kategori[key]=("teknologi")
-    # return w4.sortdic(jarak, descending=False, n=5)
     return w4.sortdic(jarak, kategori, descending=False, n=5)

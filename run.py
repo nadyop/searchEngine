@@ -62,7 +62,7 @@ def main():
 
 
     # render HTML
-    return render_template('home.html', sform = sform, data = data)
+    return render_template('index.html', sform = sform, data = data)
 
 if __name__=='__main__':
     app.run(debug=True)

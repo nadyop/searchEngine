@@ -67,5 +67,5 @@ def pearson_correlation(object1, object2):
     if denominator == 0:
         return 0
 
-    result = numerator / denominator
+    result = abs(numerator / denominator)
     return result

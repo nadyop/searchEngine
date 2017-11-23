@@ -8,11 +8,11 @@ app.config.update(dict(SECRET_KEY='12345'))
 
 class SearchTask(FlaskForm):
     keyword = TextField('Keyword')
-    search = SubmitField('Search')
-    search2 = SubmitField('Search2')
-    search3 = SubmitField('Search3')
-    search4 = SubmitField('Search4')
-    search5 = SubmitField('Search5')
+    search = SubmitField('euclidean')
+    search2 = SubmitField('cosine')
+    search3 = SubmitField('manhattan')
+    search4 = SubmitField('jaccard')
+    search5 = SubmitField('pearson')
 
 def searchTask(form):
     keyword = form.keyword.data

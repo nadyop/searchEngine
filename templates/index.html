@@ -9,7 +9,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>[ART]icles</title>
+        <title>CariCari</title>
 
         <meta name="keywords" content="">
 
@@ -63,7 +63,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand scrollTo" href="#intro">[ART]icles</a>
+                    <a class="navbar-brand scrollTo" href="#intro">CariCari</a>
                 </div>
 
                 <div class="navbar-collapse collapse" id="navigation">
@@ -76,6 +76,10 @@
                         <li><a href="#section2">Diagram Similarity</a>
                         </li>
                         <li><a href="#section3">Conclusion</a>
+                        </li>
+                        <li><a href="#section4">About Apps</a>
+                        </li>
+                        <li><a href="#section5">Team</a>
                         </li>
                     </ul>
                 </div>
@@ -136,7 +140,7 @@
         _________________________________________________________ -->
             <div class="section" id="section1">
                 <div class="container">
-                    <div class="col-md-12"><h1>Table Similarity</h1></div>
+                    <h2 class="title">Table Similarity</h2>
                     <div class="col-md-12">
 
 
@@ -147,7 +151,7 @@
                             <div class="col-md-8 col-md-offset-2">
 
                                 <table class="table table-bordered" style="Background-color:#FFFFFF">
-                                    <tr>
+                                    <tr style="background-color: #6AAE7A; color: #FFFFFF">
                                         <td style="text-align:center">Judul</td>
                                         <td style="text-align:center">Kategori</td>
                                         <td style="text-align:center">Distance Jauh</td>
@@ -180,7 +184,7 @@
 
             <div class="section  text-gray" id="section2">
                 <div class="container">
-                <div class="col-md-12"><h1>Diagram Similarity</h1></div>
+                <div class="col-md-12"><h2 class="title">Diagram Similarity</h2></div>
                     <div class="col-md-3"></div>
                     <div class="col-md-6" >
                         <div id="piechart"></div>
@@ -206,12 +210,16 @@
                     <div class="col-md-8 col-md-offset-2">
 
 
-                        <h2 class="title">Kesimpulan</h2>
+                        <h2 class="title">Conclusion</h2>
 
-                        <p class="lead margin-bottom">Kemungkinan kata/kalimat inputan, berhubungan dengan kategori 
-                            {% for v in data %}
-                          {{ v[1] }},
+                        <p class="lead margin-bottom">Kemungkinan kata/kalimat inputan berhubungan dengan kategori :
+                            <br>
+                            <STRONG>
+                                {% for v in data %}
+                          {{ v[1] }} <br>
                           {% endfor %}
+
+                            </STRONG>
                             
                         </p>
 
@@ -238,8 +246,94 @@
 
             <!-- *** JOIN US END *** -->      
 
-           
+           <!-- *** ABOUT US ***
+        _________________________________________________________ -->
 
+            <div class="section  text-gray" id="section4">
+                <div class="container">
+                    <div class="col-md-12">
+
+
+                        <h2 class="title" data-animate="fadeInDown">About Application</h2>
+
+                        <div class="row">
+
+                            <div class="col-md-8 col-md-offset-2">
+
+                                <p class="text-large text-thin"  data-animate="fadeInUp">CariCari merupakan aplikasi pencarian kata/kalimat yang outputnya mendeskripsikan kata/kalimat berdasarkan kategori-kategori yang ada dengan menggunakan metode similarity. </p>
+                                <p class="text-large text-thin margin-bottom"  data-animate="fadeInUp">Pengguna dapat langsung menginputkan kata/kalimat dan mendapatkan output berupa tabel, pie chart, dan kesimpulannya.</p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- /.12 -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.section -->
+
+            <!-- *** ABOUT US END *** -->
+
+            <!-- *** SERVICES ***
+        _________________________________________________________ -->
+            <div class="section" id="section5">
+                <div class="container">
+                    <div class="col-md-12">
+                        <h2 class="title" data-animate="fadeInDown">Team</h2>
+                        
+                        <div class="row services">
+
+                            <div class="col-md-4" data-animate="fadeInUp">
+                                <div class="icon"><i class="fa fa-female "></i>
+                                </div>
+                                <h3 class="heading" style="color: #6AAE7A">Eklima Nur Fatmala</h3>
+                                <p>15/380426/SV/08233</p>
+                            </div>
+
+                            <div class="col-md-4" data-animate="fadeInUp">
+                                <div class="icon"><i class="fa fa-female"></i>
+                                </div>
+                                <h3 class="heading" style="color: #6AAE7A">Nur Rahmah Sri Wijayanti</h3>
+                                <p>15/384481/SV/08838 </p>
+                            </div>
+
+                            <div class="col-md-4" data-animate="fadeInUp">
+                                <div class="icon"><i class="fa fa-female"></i> 
+                                </div>
+                                <h3 class="heading" style="color: #6AAE7A">Nadya Prabaningrum</h3>
+                                <p>15/386071/SV/09457</p>
+                            </div>
+
+                        </div>
+                        <div class="row services">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-5" data-animate="fadeInUp">
+                                <div class="icon" ><i class="fa fa-male"></i>
+                                </div>
+                                <h3 class="heading" style="color: #6AAE7A">Bahari Bastian L</h3>
+                                <p>15/380420/SV/08227</p>
+                            </div>
+
+                            <div class="col-md-5" data-animate="fadeInUp">
+                                <div class="icon"><i class="fa fa-male"></i>
+                                </div>
+                                <h3 class="heading" style="color: #6AAE7A">Ahmad Rijal H</h3>
+                                <p>15/386050/SV/09436</p>
+                            </div>
+                            <div class="col-md-1"></div>
+
+                        </div>
+
+                    </div>
+                    <!-- /.12 -->
+                </div>
+                <!-- /.container -->
+            </div>
+            <!-- /.section -->
+
+            <!-- *** SERVICES END *** -->
 
 
             <!-- *** FOOTER ***
@@ -250,19 +344,10 @@
 
                     <div class="row">
 
-                        <div class="col-sm-6">
+                        
 
-                            <p class="social">
-                                <a href="#" class="external facebook" data-animate-hover="shake" data-animate="fadeInUp"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="external instagram" data-animate-hover="shake" data-animate="fadeInUp"><i class="fa fa-instagram"></i></a>
-                                <a href="#" class="external twitter" data-animate-hover="shake" data-animate="fadeInUp"><i class="fa fa-twitter"></i></a>
-                                <a href="mailto:#" class="email" data-animate-hover="shake" data-animate="fadeInUp"><i class="fa fa-envelope"></i></a>
-                            </p>
-                        </div>
-                        <!-- /.6 -->
-
-                        <div class="col-sm-6">
-                            <p>&copy; 2016 [ART]icles. 
+                        <div class="col-sm-12">
+                            <p>&copy; 2016 CariCari. 
                                 <!-- Do not remove the attribution, thx! If you need to do so, pls donate (http://bootstrapious.com/donate) to support us! -->
                                 Template by <a href="https://www.bootstrapious.com/landing-pages" class="external">Bootstrapious</a>.</p>
                         </div>
